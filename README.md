@@ -31,7 +31,7 @@ The model consists of:
 ## File Structure
 
 ```text
-tiny-gpt-from-scratch/
+mujeong-gpt/
 ├── README.md
 ├── requirements.txt
 ├── model.py
