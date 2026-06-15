@@ -1,4 +1,4 @@
-# Tiny GPT from Scratch
+# 무정GPT: 『무정』 데이터셋을 활용한 Character-Level GPT 구현
 
 This repository implements a small GPT-style language model in PyTorch, based on Karpathy's GPT-from-scratch lecture and Notebook 6.
 
