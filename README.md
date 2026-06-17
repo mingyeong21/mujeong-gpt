@@ -23,18 +23,6 @@ y: 정 G P T
 
 즉, 모델은 각 위치에서 다음 문자가 무엇인지 예측하도록 학습됩니다.
 
-이 프로젝트를 통해 다음 개념들을 직접 구현하고 이해하는 것을 목표로 했습니다.
-
-* Character-level tokenization
-* Token embedding
-* Positional embedding
-* Masked self-attention
-* Multi-head attention
-* Transformer block
-* Residual connection
-* Layer normalization
-* Cross entropy loss
-* Autoregressive text generation
 
 ---
 

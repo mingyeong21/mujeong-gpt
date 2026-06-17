@@ -48,8 +48,6 @@ with open("data/input.txt", "r", encoding="utf-8") as f:
 
 print("dataset length:", len(text))
 print("vocab size:", len(set(text)))
-print("first 500 characters:")
-print(text[:500])
 
 chars = sorted(list(set(text)))
 vocab_size = len(chars)
