@@ -347,20 +347,6 @@ torch
 4. 하지만 작은 모델에서는 긴 문맥을 자연스럽게 유지하기 어렵다.
 5. 단어 단위 의미를 정확히 이해하기보다는 문자 배열의 통계적 패턴을 학습한다.
 
-### 보완할 점
-
-본 프로젝트의 한계와 보완할 점은 다음과 같습니다.
-
-첫째, 모델의 크기가 작기 때문에 긴 문맥을 안정적으로 유지하는 데 한계가 있습니다. 더 큰 embedding dimension, 더 많은 attention head, 더 많은 Transformer block을 사용하면 표현력이 향상될 수 있습니다.
-
-둘째, character-level 방식은 구현이 단순하다는 장점이 있지만, 단어 또는 형태소 단위 의미를 직접 학습하기 어렵습니다. 추후에는 subword tokenization이나 형태소 기반 tokenization을 적용해볼 수 있습니다.
-
-셋째, 학습 데이터의 전처리 방식에 따라 결과가 달라질 수 있습니다. 한자, 특수문자, 줄바꿈, 공백 등을 어떻게 처리할지에 따라 vocabulary size와 학습 난이도가 달라집니다.
-
-넷째, 생성 과정에서 temperature 값을 조절하면 결과의 다양성을 바꿀 수 있습니다. 낮은 temperature는 더 안정적인 출력을 만들고, 높은 temperature는 더 다양한 출력을 만들지만 문장이 어색해질 수 있습니다.
-
-다섯째, 현재 프로젝트는 교육용 구현이므로 실제 GPT-2나 ChatGPT와 같은 대규모 언어 모델 수준의 자연스러운 문장 생성은 어렵습니다. 그러나 GPT의 핵심 원리인 next-token prediction, causal masking, self-attention, Transformer block의 작동 방식을 이해하는 데에는 적합합니다.
-
 ---
 
 ## 실행 방법
