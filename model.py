@@ -47,6 +47,7 @@ class MultiHeadAttention(nn.Module):
         self.proj = nn.Linear(emb_dim, emb_dim)
         self.dropout = nn.Dropout(dropout)
 
+    ### 32차원로 나눠진 것을 128차원으로 다시 합침
     def forward(self, x):
         out = torch.cat([head(x) for head in self.heads], dim=-1)
         out = self.proj(out)
@@ -115,14 +116,15 @@ class TinyGPT(nn.Module):
     def forward(self, idx, targets=None):
         B, T = idx.shape
 
-        tok_emb = self.token_embedding_table(idx)
-        pos = torch.arange(T, device=idx.device)
-        pos_emb = self.position_embedding_table(pos)
-
+        tok_emb = self.token_embedding_table(idx)    # (B, T, C) = (64, 64, 128) 글자 정보
+        pos = torch.arange(T, device=idx.device)    
+        pos_emb = self.position_embedding_table(pos)    # (T, C) = (64, 128) 위치 정보
+        
+        ### broadcasting rule 적용
         x = tok_emb + pos_emb
         x = self.blocks(x)
         x = self.ln_f(x)
-        logits = self.lm_head(x)
+        logits = self.lm_head(x)    # (64, 64, 1676) 각 위치마다 1676개 글자 후보에 대한 점수 출력
 
         loss = None
         if targets is not None:
