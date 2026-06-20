@@ -29,6 +29,7 @@ model = TinyGPT(
     dropout=checkpoint["dropout"],
 ).to(device)
 
+### TinyGPT 구조에 학습된 가중치 입력, model evaluate = dropout 끔
 model.load_state_dict(checkpoint["model_state_dict"])
 model.eval()
 
@@ -43,7 +44,7 @@ context = torch.tensor(
 generated = model.generate(
     context,
     max_new_tokens=500,
-    temperature=0.8
+    temperature=0.8     # 생성 결과의 랜덤한 정도 조절
 )
 
 print(decode(generated[0].tolist()))

@@ -17,7 +17,7 @@ class Head(nn.Module):
             "tril",
             torch.tril(torch.ones(block_size, block_size))
         )
-
+        
     def forward(self, x):
         B, T, C = x.shape
 
